@@ -28,14 +28,30 @@ Coming into this class, I had experience with most of what i'd be interacting wi
 ## The Learning Process
 This project, and the course as a whole, came with a learning curve for me. Coming into the class, I had little to no experience with control system design or iterating on them. Although I felt comfortable with the software we used, I had mostly used them for data collection & representation, not as tools for simulation. While I definitely feel that I came into the course with a bit more knowledge than some of my peers, I was definitely pushed out of my comfort zone.
 
-Something I've observed as a student and as a Laboratory Assistant is that students learn best from their peers - this continued to hold true in this class's weekly lab sections. I found that being able to share my design's progress with my peers, as well as being able to see what they had implemented, usually lead to everyone involved implementing changes into their designs. Something that commonly happened was suggesting various tuning values - at one point, I suggested using a much higher Kp value than suggested - 10 instead of the initial 1 - in the velocity function of our code. For the majority of people, this lead to a large and immediate change in performance, which could then be turned to each individual system.
+Something I've observed as a student and as a Laboratory Assistant is that students learn best from their peers - this continued to hold true in this class's weekly lab sections. I found that being able to share my design's progress with my peers, as well as being able to see what they had implemented, usually lead to everyone involved implementing changes into their designs. 
 
+
+
+Something that commonly happened was suggesting various tuning values - at one point, I suggested using a much higher Kp value than suggested - 10 instead of the initial 1 - in the velocity function of our code. For the majority of people, this lead to a large and immediate change in performance, which could then be turned to each individual system.
+<br />
+<br />
 ```c++
 float refVelPreFilter = Gc_mtrPos.U_PID(errPos, 20, 0.25, 2.0, 5, saturatedActuator); //errPos, Kp, Ki, Kd, Derivative_cutoff_freq_rps, saturatedActuator
 ```
+*The code in question, with my finalized input values.*
+<br />
+<br />
+While some changes were predictable and had standard responses in the system, some changes were not predicted. One particularly finnicky part of the code was the PID controller for motor position - small changes in any of the values (+/- 0.1) could make a large impact on the system's initial response, its steady state values, and the amount of steady state oscillation.
 
 
+Before implementing the PID controllers, I was able to get  my system to a point that it was well tuned. Switching over to using the PID controllers for potentially better performance, was a bit daunting. While the benefits were there, hours had been spent simulating and tuning the initial system. While implementing the PID controllers was the correct choice, making the judgement call to throw away a fair amount of work was nonetheless stressful. The next step was to weigh the pros and cons of creating more models in matlab to find better values, versus iterating through by manually tuning.
 
-
+## The Finalized System
 
 ![](tuned_system.gif)
+
+*The working ball on beam system, including an added disturbance in the form of pushing the ball. Pushing the ball is fun.*
+
+![](changesaftertuning.png)
+
+
