@@ -53,7 +53,11 @@ Before implementing the PID controllers, I was able to get  my system to a point
 *The working ball on beam system, including an added disturbance in the form of pushing the ball. Pushing the ball is fun.*
 <br />
 <br />
-While it is by no means an exhaustive showing of all I learned from the class, this project pulled together several aspects of control systems. Iterative design, implementing feedback & feedforward designs, PID control, filtering, all of these are an important aspect to controls. One of my favorite aspects was seeing the direct impact of the iterative design process. Below is a graph showing a 20-second run of t
-![](changesaftertuning.png)
-
+While it is by no means an exhaustive showing of all I learned from the class, this project pulled together several aspects of control systems. Iterative design, implementing feedback & feedforward designs, PID control, filtering, all of these are an important aspect to controls. One of my favorite aspects was seeing the direct impact of the iterative design process. Below is a graph showing two 20-second runs of the system, one before tuning and one after.
+<br />
+![](tunedvsuntuned.png)
+*The feedback across a 20-second long segment, one with untuned values and one after tuning.*
+<br />
+<br />
+Notice that the tuning affected several aspects of the system's response: the tuned response has a faster response time, and less oscillation in steady state. It is also slightly quicker to respond to the disturbance, and corrects the ball back to the center faster. It is also slightly more accurate at reaching the correct reference distance of 200mm.
 
