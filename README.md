@@ -51,7 +51,9 @@ Before implementing the PID controllers, I was able to get  my system to a point
 ![](tuned_system.gif)
 
 *The working ball on beam system, including an added disturbance in the form of pushing the ball. Pushing the ball is fun.*
-
+<br />
+<br />
+While it is by no means an exhaustive showing of all I learned from the class, this project pulled together several aspects of control systems. Iterative design, implementing feedback & feedforward designs, PID control, filtering, all of these are an important aspect to controls. One of my favorite aspects was seeing the direct impact of the iterative design process. Below is a graph showing a 20-second run of t
 ![](changesaftertuning.png)
 
 
